@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數據導出功能</title>
+</head>
+<body>
+
+<div>
+    <h1>分析結果報告</h1>
+
+    <!-- 決策樹子頁的HTML內容 -->
+    <h2>決策樹子頁</h2>
+    <p>資料的群集：6 是否會買：YES</p>
+
+    <!-- 分群結果的HTML內容 -->
+    <h2>分群結果</h2>
+    <p>資料的群集：6  是否會買：YES</p>
+
+    <!-- KNN結果的HTML內容 -->
+    <h2>KNN結果</h2>
+    <p>knn id: 83 knn pep: NO</p>
+
+    <!-- 交叉分析結果的HTML內容 -->
+    <h2>交叉分析結果</h2>
+    <p>分析結果：強烈會買</p>
+
+    <button onclick="exportData()">導出數據</button>
+</div>
+
+<script>
+    function exportData() {
+        // 模擬分析結果和數據
+        var decisionTreeData = {'資料的群集': 6, '是否會買': 'YES'};
+        var clusteringData = {'資料的群集': 6, '是否會買': 'YES'};
+        var knnData = {'knn id': 83, 'knn pep': 'NO'};
+        var crossAnalysisData = {'分析結果': '強烈會買'};
+
+        // 將數據組合成一個陣列
+        var exportData = [decisionTreeData, clusteringData, knnData, crossAnalysisData];
+
+        // 生成CSV文件
+        var csvContent = "data:text/csv;charset=utf-8,";
+        exportData.forEach(function(row){
+            csvContent += Object.values(row).join(",") + "\r\n";
+        });
+
+        // 創建一個隨機的文件名
+        var fileName = "analysis_results_" + Math.floor(Math.random() * 100000) + ".csv";
+
+        // 創建一個虛擬的下載鏈接，觸發點擊來下載CSV文件
+        var link = document.createElement("a");
+        link.setAttribute("href", encodeURI(csvContent));
+        link.setAttribute("download", fileName);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
+
+</body>
+</html>

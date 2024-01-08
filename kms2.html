@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/knn.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>410422082 統計資訊學系 林囿妤</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/knn.js"></script>
+
+</head>
+<body>
+	<div id="goPagediv">
+		<a href="knn.html">分群截圖</a>
+	</div>
+	<div id="goPagediv">
+		<a href="cluster.html">交叉分析截圖</a>
+	</div>
+	<div id="Pagediv">
+		<a href="test3.html">分析結果報告匯出</a>
+	</div>
+	<div id="mainleft">
+		<p class="subtitle">變數輸入</p>
+		<hr>
+		<div>
+			<table>
+				<tr>
+					<td>建物數量</td>
+					<td><input type="text" id="buildingtext"></td>
+					<td>房間數</td>
+					<td><input type="text" id="roomtext"></td>
+				</tr>
+				<tr>
+					<td>鄉鎮市區</td>
+					<td><select id="areaselect">
+							<option value="七堵區">七堵區</option>
+							<option value="中山區">中山區</option>
+							<option value="中正區">中正區</option>
+							<option value="仁愛區">仁愛區</option>
+							<option value="安樂區">安樂區</option>
+							<option value="信義區">信義區</option>
+							<option value="暖暖區">暖暖區</option>
+						</select>
+					</td>
+					<td>電梯</td>
+					<td>
+						<select id="elevatorselect">
+							<option value="有">有</option>
+							<option value="無">無</option>
+						</select>	
+					</td>
+				</tr>
+				<tr>
+					<td>建物型態</td>
+					<td>
+						<select id="buildingtypeselect">
+							<option value="住宅大樓(11樓以上有電梯)">住宅大樓(11樓以上有電梯)</option>
+							<option value="透天厝">透天厝</option>
+							<option value="公寓(5樓以下無電梯)">公寓(5樓以下無電梯)</option>
+							<option value="華廈(10樓以下有電梯)">華廈(10樓以下有電梯)</option>
+							<option value="其他">其他</option>
+						</select>
+					</td>
+					<td>主要用途</td>
+					<td>
+						<select id="landtypeselect">
+							<option value="住家用">住家用</option>
+							<option value="商業用">商業用</option>
+							<option value="住商用">住商用</option>
+							<option value="辦公用">辦公用</option>
+							<option value="商辦用">商辦用</option>
+							<option value="工業用">工業用</option>
+							<option value="一般事務所">一般事務所</option>
+							<option value="其他">其他</option>
+						</select>
+					</td>	
+				</tr>
+				<tr>
+					<td>總樓層</td>
+					<td><input type="text" id="totalfloortext"></td>
+					<td>主建物面積</td>
+					<td><input type="text" id="housetext"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div id="mainright">
+		<p class="subtitle">kmeans</p>
+		<hr>
+		<table>
+			<tr>
+				<td>資料的群集</td>
+				<td id="nowcluster"></td>
+				<td>是否有管理組織:</td>
+				<td id="nowkmeanspep"></td>	
+			</tr>
+		</table>
+		<br>
+		<p class="subtitle">Knn</p>
+		<hr>
+		<table>
+			<tr>
+				<td>Knn id:</td>
+				<td id="nowknnid"></td>
+				<td>KNN pep:</td>
+				<td id="nowknnpep"></td>	
+			</tr>
+		</table>
+		<br>
+		<p class="subtitle">交叉分析</p>
+		<hr>
+		<table>
+			<tr>
+				<td>分析結果:</td>
+				<td id="nowcafinal"></td>
+			</tr>
+		</table>
+	</div>
+	<div id="maindown">
+		<table>
+			<tr>
+				<td><button id="SendBtn" onclick="sendresult()">送出</button></td>
+				<td><button id="CountBtn" onclick="kmeans()">計算</button></td>
+				<td><button id="CrossAnaBtn" onclick="crossanalysis()">交叉分析</button></td>
+				<td><button id="KNNBtn" onclick="knn()">KNN</button></td>
+				<td><button id="CleanDataBtn" onclick="emptyInput()">清除資料</button></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

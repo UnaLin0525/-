@@ -1,0 +1,22 @@
+body{
+	font-family: "微軟正黑體";
+}
+h1{
+	font-size: 50px;
+	text-align: center;
+	text-shadow: transparent;
+}
+p{
+	font-size: 25px;
+	text-align: center;
+}
+#btnplace{
+	text-align: center;
+}
+.btn{
+	font-size: 20px;
+	background-color: #D2A2CC;
+}
+#gohomediv{
+	text-align: right;
+}

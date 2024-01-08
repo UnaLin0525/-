@@ -1,0 +1,58 @@
+td{
+	border: 0.7rem #9999FF inset;
+	width: 18rem;
+	height: 6rem;
+}
+#choicetable{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 90vh;
+	width: 50vw;
+	float: left;
+}
+
+#confirmAndPep{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 90vh;
+	width: 45vw;
+	float: right;
+}
+
+#confirmAndPep td{
+	border: none;
+}
+
+h5{
+	font-size: 1.5rem;
+	line-height: 0.5rem;
+}
+#build h5{
+	font-size: 0.5rem;
+	line-height: 0.5rem;
+} 
+.theform{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.theform select, input{
+	font-size: 1rem;
+}
+
+.theform input{
+	width: 35%;
+}
+#confirmbtn{
+	width: 12rem;
+	height: 3rem;
+	font-size: 1.3rem;
+}
+
+#finalanswer{
+	background-color: #ACD6FF;
+	font-size: 3.5rem;
+	text-align: center;
+}

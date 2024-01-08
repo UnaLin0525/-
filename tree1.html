@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/tree.css">
+	<script type="text/javascript" src="js/tree3.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>決策樹</title>
+</head>
+<body>
+	<div id="choicetable">
+		<table>
+			<tr>
+				<td>
+					<div class="theform">
+						<h5>建物數量:&nbsp&nbsp&nbsp</h5>
+						<input type="text" id="buildingtext">
+					</div>
+				</td>
+				<td>
+					<div class="theform">
+						<h5>房間數:&nbsp&nbsp&nbsp</h5>
+						<input type="text" id="roomtext">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="theform">
+						<h5>居住區域:&nbsp&nbsp&nbsp</h5>
+						<select id="areaselect">
+							<option value="七堵區">七堵區</option>
+							<option value="中山區">中山區</option>
+							<option value="中正區">中正區</option>
+							<option value="仁愛區">仁愛區</option>
+							<option value="安樂區">安樂區</option>
+							<option value="信義區">信義區</option>
+							<option value="暖暖區">暖暖區</option>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="theform">
+						<h5>電梯:&nbsp&nbsp&nbsp</h5>
+						<select id="elevatorselect">
+							<option value="有">有</option>
+							<option value="無">無</option>
+						</select>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="theform">
+						<div id="build">
+							<h5>建物型態:&nbsp&nbsp&nbsp</h5>	
+						</div>
+						<select id="buildingtypeselect">
+							<option value="住宅大樓(11樓以上有電梯)">住宅大樓(11樓以上有電梯)</option>
+							<option value="透天厝">透天厝</option>
+							<option value="公寓(5樓以下無電梯)">公寓(5樓以下無電梯)</option>
+							<option value="華廈(10樓以下有電梯)">華廈(10樓以下有電梯)</option>
+							<option value="其他">其他</option>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="theform">
+						<h5>主要用途:&nbsp&nbsp&nbsp</h5>	
+						<select id="landtypeselect">
+							<option value="住家用">住家用</option>
+							<option value="商業用">商業用</option>
+							<option value="住商用">住商用</option>
+							<option value="辦公用">辦公用</option>
+							<option value="商辦用">商辦用</option>
+							<option value="工業用">工業用</option>
+							<option value="一般事務所">一般事務所</option>
+							<option value="其他">其他</option>
+						</select>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="theform">
+						<h5>總樓層:&nbsp&nbsp&nbsp</h5>
+						<input type="text" id="totalfloortext">
+					</div>
+				</td>
+				<td>
+					<div class="theform">
+						<h5>主建物面積:&nbsp&nbsp&nbsp</h5>
+						<input type="text" id="housetext">
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="confirmAndPep">
+		<table>
+			<tr>
+				<td>
+					<button id="confirmbtn" onclick="confirm()">confirm and send</button>
+				</td>
+				<td>
+					<button id="confirmbtn2" onclick="confirm2()">清除</button>
+				</td>
+				<td>
+					<h5>predict pep</h5>
+				</td>
+				<td id="finalanswer">
+				</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+
+</body>
+</html>
